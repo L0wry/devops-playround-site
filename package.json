@@ -1,0 +1,19 @@
+{
+  "name": "devops-playround-site",
+  "version": "1.0.0",
+  "description": "Application to support my meetup on visual regression testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/L0wry/devops-playround-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/L0wry/devops-playround-site/issues"
+  },
+  "homepage": "https://github.com/L0wry/devops-playround-site#readme"
+}
