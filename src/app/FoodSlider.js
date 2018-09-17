@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Text} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -6,7 +6,6 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import tileData from './tileData';
 
 const styles = theme => ({
   root: {
@@ -30,41 +29,41 @@ const styles = theme => ({
   },
 });
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-function SingleLineGridList(props) {
-  const { classes } = props;
 
+class FoodSlider extends React.Component {
+  constructor() {
+  super()
+  
+  
+  this.state = {
+    tileData: [
+      {
+        img: 'https://images.unsplash.com/photo-1494249465471-5655b7878482?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=191559dc1cae3f8967d568dfd8a77093&auto=format&fit=crop&w=1950&q=80',
+        title: 'Image',
+        author: 'author',
+      }
+    ],
+    stuff: 
+  }
+}
+
+
+ render() {
   return (
-    <div className={classes.root}>
-      <GridList className={classes.gridList} cols={2.5}>
-        {tileData.map(tile => (
+    <div className={'root'}>
+      <GridList className={'gridList'} cols={2.5}>
+        {this.state.tileData.map(tile => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               classes={{
-                root: classes.titleBar,
-                title: classes.title,
+                root: 'titleBar',
+                title: 'classes',
               }}
               actionIcon={
                 <IconButton>
-                  <StarBorderIcon className={classes.title} />
+                  <StarBorderIcon className={'title'} />
                 </IconButton>
               }
             />
@@ -73,10 +72,11 @@ function SingleLineGridList(props) {
       </GridList>
     </div>
   );
+ }
 }
 
-SingleLineGridList.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(SingleLineGridList);
+ 
+
+
+export default withStyles(styles)(FoodSlider);
