@@ -27,8 +27,8 @@ class ButtonAppBar extends React.Component {
 
  constructor() {
    super()
-    const number = getRandomInt(4)
-     this._showbug = number % 4 === 0 
+    const number = getRandomInt(10)
+     this._showbug = number % 8 === 0 
  }
 
 
