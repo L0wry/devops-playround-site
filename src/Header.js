@@ -31,7 +31,6 @@ class ButtonAppBar extends React.Component {
      this._showbug = number % 8 === 0 
  }
 
-
   render() {
     return (
       <div className={'root'}>
