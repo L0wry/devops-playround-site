@@ -5,7 +5,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
+import InfoIcon from '@material-ui/icons/Info';
 import foodData from './recipes.json'
 import RecipeReviewCard from "./RecipeReviewCard"
 
@@ -33,30 +33,42 @@ const styles = theme => ({
   },
 });
 
-function AdvancedGridList() {
-  return (
-    <div className={'root'}>
-      <GridList cellHeight={200} spacing={1} className={'gridList'}>
-        {foodData.recipes.map(tile => (
-          <GridListTile key={tile.img} cols={tile.featured ? 1 : 0.5} rows={tile.featured ? 1 : 0.5}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              titlePosition="top"
-              actionIcon={
-                <IconButton className={'icon'}>
-                  <StarBorderIcon />
-                </IconButton>
-              }
-              actionPosition="left"
-              className={'titleBar'}
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-      <RecipeReviewCard />
-    </div>
-  );
+class Foodslider extends React.Component {
+  constructor() {
+    super();
+  }
+
+  handleRecipeClick(recipe) {
+    this.setState({ selectedRecipe: recipe });
+    console.log(this.state)
+  }
+
+    render() {
+      return (
+        <div className={'root'}>
+          <GridList cellHeight={200} spacing={1} className={'gridList'}>
+            {foodData.recipes.map(tile => (
+              <GridListTile key={tile.img} cols={tile.featured ? 1 : 0.5} rows={tile.featured ? 1 : 0.5}>
+                <img src={tile.img} alt={tile.title} />
+                <GridListTileBar
+                  title={tile.title}
+                  titlePosition="top"
+                  actionIcon={
+                    <IconButton className={'icon'}>
+                      <InfoIcon onClick={() => this.handleRecipeClick(tile)}/>
+                    </IconButton>
+                  }
+                  actionPosition="left"
+                  className={'titleBar'}
+                />
+              </GridListTile>
+            ))}
+          </GridList>
+          <RecipeReviewCard selectedRecipe={this.state.selectedRecipe ? this.state.selectedRecipe : null} />
+        </div>
+      );
+    }
 }
 
-export default withStyles(styles)(AdvancedGridList);
+
+export default withStyles(styles)(Foodslider);

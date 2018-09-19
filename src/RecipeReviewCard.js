@@ -44,7 +44,15 @@ const styles = theme => ({
 });
 
 class RecipeReviewCard extends React.Component {
-  state = { expanded: false };
+  constructor(props) {
+    super();
+    console.log(props)
+    this.state = {
+      expanded: false,
+      selectedRecipe: props.selectedRecipe
+    }
+  }
+  state = {  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -61,7 +69,7 @@ class RecipeReviewCard extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
+          title={this.state.selectedRecipe}
           subheader="September 14, 2016"
         />
         <CardMedia
