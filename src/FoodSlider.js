@@ -36,11 +36,15 @@ const styles = theme => ({
 class Foodslider extends React.Component {
   constructor() {
     super();
+    //this.handleRecipeClick = this.handleRecipeClick.bind(this)
+    this.state = {
+      selectedRecipe: foodData.recipes[0]
+    }
   }
 
   handleRecipeClick(recipe) {
-    this.setState({ selectedRecipe: recipe });
-    console.log(this.state)
+    console.log(recipe)
+    this.setState(() => ({ selectedRecipe: recipe }));
   }
 
     render() {
@@ -64,7 +68,7 @@ class Foodslider extends React.Component {
               </GridListTile>
             ))}
           </GridList>
-          <RecipeReviewCard selectedRecipe={this.state.selectedRecipe ? this.state.selectedRecipe : null} />
+          <RecipeReviewCard selectedRecipe={this.state.selectedRecipe} />
         </div>
       );
     }

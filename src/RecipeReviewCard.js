@@ -22,7 +22,7 @@ const styles = theme => ({
     maxWidth: 2000,
   },
   media: {
-    height: 0,
+    height: 500,
     paddingTop: '56.25%', // 16:9
   },
   actions: {
@@ -46,34 +46,34 @@ const styles = theme => ({
 class RecipeReviewCard extends React.Component {
   constructor(props) {
     super();
-    console.log(props)
     this.state = {
       expanded: false,
-      selectedRecipe: props.selectedRecipe
     }
+    this.selectedRecipe = props.selectedRecipe
+
+    console.log(this.selectedRecipe.img)
   }
-  state = {  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
 
   render() {
-    const { classes } = this.props;
 
     return (
-      <Card className={classes.card}>
+      <Card className='card'>
+      <CardMedia style={{height: 300}} src={this.selectedRecipe.img} image={this.selectedRecipe.img}/>
         <CardHeader
           action={
             <IconButton>
               <MoreVertIcon />
             </IconButton>
           }
-          title={this.state.selectedRecipe}
+          title={this.selectedRecipe.title}
           subheader="September 14, 2016"
         />
         <CardMedia
-          className={classes.media}
+          className='media'
           image=""
           title="Contemplative Reptile"
         />
@@ -83,7 +83,7 @@ class RecipeReviewCard extends React.Component {
             guests. Add 1 cup of frozen peas along with the mussels, if you like.
           </Typography>
         </CardContent>
-        <CardActions className={classes.actions} disableActionSpacing>
+        <CardActions className='actions' disableActionSpacing>
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
@@ -91,9 +91,9 @@ class RecipeReviewCard extends React.Component {
             <ShareIcon />
           </IconButton>
           <IconButton
-            className={classnames(classes.expand, {
-              [classes.expandOpen]: this.state.expanded,
-            })}
+            // className={classnames(classes.expand, {
+            //   [classes.expandOpen]: this.state.expanded,
+            // })}
             onClick={this.handleExpandClick}
             aria-expanded={this.state.expanded}
             aria-label="Show more"
