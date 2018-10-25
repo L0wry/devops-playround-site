@@ -1,0 +1,14 @@
+{
+    "gridUrl": "http://localhost:4444/wd/hub",
+    "baseline": "./baseline", 
+    "latest": "./latest",
+    "generatedDiffs": "./generatedDiffs",
+    "report": "./reports",
+    "scenarios": [
+      {
+        "url": "http://google.com/",
+        "label": "homepage",
+        "viewports": [{"height": 2400, "width": 1024, "label": "large"}]
+      }
+    ]
+  }
