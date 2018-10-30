@@ -1,12 +1,12 @@
 {
-    "gridUrl": "http://hub:4444/wd/hub",
+    "gridUrl": "http://localhost:4444/wd/hub",
     "baseline": "./ayespy/baseline", 
     "latest": "./ayespy/latest",
     "generatedDiffs": "./ayespy/generatedDiffs",
     "report": "./reports",
     "scenarios": [
       {
-        "url": "http://app.com/",
+        "url": "http://cookingapp:3000",
         "label": "homepage",
         "viewports": [{"height": 2400, "width": 1024, "label": "large"}]
       }
