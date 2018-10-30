@@ -1,12 +1,12 @@
 {
-    "gridUrl": "http://localhost:4444/wd/hub",
-    "baseline": "./baseline", 
-    "latest": "./latest",
-    "generatedDiffs": "./generatedDiffs",
+    "gridUrl": "http://hub:4444/wd/hub",
+    "baseline": "./ayespy/baseline", 
+    "latest": "./ayespy/latest",
+    "generatedDiffs": "./ayespy/generatedDiffs",
     "report": "./reports",
     "scenarios": [
       {
-        "url": "http://google.com/",
+        "url": "http://app.com/",
         "label": "homepage",
         "viewports": [{"height": 2400, "width": 1024, "label": "large"}]
       }
