@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Bug from "./bug.png";
 import Menu from "./Menu";
 
 const styles = {
@@ -40,7 +41,10 @@ class ButtonAppBar extends React.Component {
               <Menu />
             </IconButton>
             <Typography variant="title" color="inherit" className={'grow'}>
-              Aye Spy Demo Site { this._showbug ? '🐛' :'' }
+              Aye Spy Demo Site { this._showbug ? 
+                <img src={Bug} width="30" height="30" class="eww-a-bug"/> :
+                null 
+               }
             </Typography> 
           </Toolbar>
         </AppBar>

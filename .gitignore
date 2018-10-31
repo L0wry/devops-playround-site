@@ -84,3 +84,4 @@ yarn-error.log*
 ayespy/baseline/
 ayespy/generatedDiffs/
 ayespy/latest/
+reports/
