@@ -16,6 +16,15 @@ services:
     ports:
       - "4444:4444"
 
+  ayespy_report:
+    image: nginx
+    volumes:
+      - /home/playground/ayespy/reports/index.html:/var/www
+    ports:
+       - "80:80"
+    environment:
+      - NGINX_PORT=80
+
 networks:
   app-net:
     driver: overlay
