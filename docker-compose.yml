@@ -19,7 +19,8 @@ services:
   ayespy_report:
     image: nginx
     volumes:
-      - /home/playground/ayespy/reports/index.html:/var/www
+      - /home/playground/ayespy:/var/www
+      - /host/path/nginx.conf:/etc/nginx/nginx.conf
     ports:
        - "80:80"
     environment:
