@@ -65,11 +65,13 @@ class RecipeReviewCard extends React.Component {
             onClick={this.handleExpandClick}
             aria-expanded={this.state.expanded}
             aria-label="Show more"
-          >
+        >
             <ExpandMoreIcon />
           </IconButton>
         </CardActions>
-        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+        <Collapse  classes={{
+          root: {className: 'test'} // class name, e.g. `classes-nesting-root-x`
+        }} in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph variant="body2">
               Method:
