@@ -3,4 +3,11 @@ Application to support my meetup on visual regression testing
 
 
 
-./node_modules/.bin/ayespy 
+interesting to classes to play with 
+
+
+the-hamburger-button
+eww-a-bug
+a-dynamic-spinner
+show-me-more
+favorite-button-(number)

@@ -12,7 +12,7 @@ const styles = theme => ({
 function CircularIndeterminate() {
   return (
     <div>
-      <CircularProgress className={'Spinner'} style={{ color: green[500] }} thickness={7} />
+      <CircularProgress className={'a-dynamic-spinner'} style={{ color: green[500] }} thickness={7} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Spinner from "./Spinner";
 
 const styles = theme => ({
   card: {
@@ -66,12 +67,12 @@ class RecipeReviewCard extends React.Component {
             aria-expanded={this.state.expanded}
             aria-label="Show more"
         >
-            <ExpandMoreIcon />
+            <ExpandMoreIcon classes={{
+            root: 'show-me-more', // class name, e.g. `classes-nesting-root-x`
+          }}/>
           </IconButton>
         </CardActions>
-        <Collapse  classes={{
-          root: {className: 'test'} // class name, e.g. `classes-nesting-root-x`
-        }} in={this.state.expanded} timeout="auto" unmountOnExit>
+        <Collapse  in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph variant="body2">
               Method:
@@ -79,8 +80,10 @@ class RecipeReviewCard extends React.Component {
             <Typography paragraph>
             {this.props.selectedRecipe.method}
             </Typography>
+            <Spinner />
           </CardContent>
         </Collapse>
+     
       </Card>
     );
   }
