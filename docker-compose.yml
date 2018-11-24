@@ -10,7 +10,7 @@ services:
       - "3000:3000"
 
   selenium:
-    image: selenium/standalone-chrome
+    image: selenium/standalone-firefox
     networks:
       - app-net
     ports:
