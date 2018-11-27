@@ -37,9 +37,7 @@ class ButtonAppBar extends React.Component {
       <div className={'root'}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton classes={{
-              root: 'the-hamburger-button', // class name, e.g. `classes-nesting-root-x`
-              }} 
+            <IconButton
               color="inherit" aria-label="Menu">
               <Menu />
             </IconButton>

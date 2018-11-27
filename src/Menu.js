@@ -19,16 +19,21 @@ function RenderPropsMenu() {
         return (
           <React.Fragment>
             <MenuIcon
+             classes={{
+              root: 'the-hamburger-button', // class name, e.g. `classes-nesting-root-x`
+              }} 
               aria-owns={open ? 'render-props-menu' : null}
               aria-haspopup="true"
               onClick={event => {
                 updateAnchorEl(event.currentTarget);
               }}
             />
-            <Menu id="the-props-menu" anchorEl={anchorEl} open={open} onClose={handleClose}>
+            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+            <div id="the-props-menu" >
               <MenuItem onClick={handleClose}>Maybe Profile</MenuItem>
               <MenuItem onClick={handleClose}>Maybe My account</MenuItem>
               <MenuItem onClick={handleClose}>Maybe Logout</MenuItem>
+              </div>
             </Menu>
           </React.Fragment>
         );
