@@ -12,9 +12,9 @@ function RenderPropsMenu() {
     <WithState>
       {({ anchorEl, updateAnchorEl }) => {
         const open = Boolean(anchorEl);
-        const handleClose = () => {
-          updateAnchorEl(null);
-        };
+        // const handleClose = () => {
+        //   updateAnchorEl(null);
+        // };
 
         return (
           <React.Fragment>
@@ -28,11 +28,11 @@ function RenderPropsMenu() {
                 updateAnchorEl(event.currentTarget);
               }}
             />
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <div id="the-props-menu" >
-              <MenuItem onClick={handleClose}>Maybe Profile</MenuItem>
-              <MenuItem onClick={handleClose}>Maybe My account</MenuItem>
-              <MenuItem onClick={handleClose}>Maybe Logout</MenuItem>
+            <Menu anchorEl={anchorEl} open={open}>
+            <div className="the-props-menu" >
+              <MenuItem>Maybe Profile</MenuItem>
+              <MenuItem>Maybe My account</MenuItem>
+              <MenuItem>Maybe Logout</MenuItem>
               </div>
             </Menu>
           </React.Fragment>
