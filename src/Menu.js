@@ -28,14 +28,12 @@ function RenderPropsMenu() {
                 updateAnchorEl(event.currentTarget);
               }}
             />
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-            <div className="the-props-menu" >
+            <Menu  anchorEl={anchorEl} open={open} onClose={handleClose}>
               <MenuItem onClick={handleClose}>Maybe Profile</MenuItem>
               <MenuItem onClick={handleClose}>Maybe My account</MenuItem>
               <MenuItem onClick={handleClose}>Maybe Logout</MenuItem>
-              </div>
-            </Menu>
-          </React.Fragment>
+              </Menu>
+        </React.Fragment>
         );
       }}
     </WithState>
